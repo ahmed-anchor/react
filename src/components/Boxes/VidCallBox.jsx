@@ -1,30 +1,41 @@
+import Addfreind from "../svgs/Addfreind";
+import VideoIcon from "../svgs/VideoIcon";
+import Mic from "../svgs/Mic";
+import VerticalDots from "../svgs/VerticalDots";
+import ClosePhone from "../svgs/ClosePhone";
+import whatss from '../../assets/whatss.jpeg'
+import Camera from "../svgs/Camera";
+import RingingPhone from "../svgs/RingingPhone";
+import { Link } from "react-router-dom";
 
 export default function VidCallBox() {
   return (
-    <div className="w-full h-screen flex flex-col bg-gray-900 text-white">
+    <div className="w-full h-screen flex flex-col bg-[#464448] text-white">
       {/* Header */}
       <div className="flex justify-between items-center p-4 bg-white text-black shadow-md">
-        <h1 className="font-bold text-lg">WHATSS</h1>
-        <div className="flex gap-4">
-          <button className="text-xl">📞</button>
-          <button className="text-xl">📷</button>
+        <h1 className="font-bold text-lg">المكالمات</h1>
+        <div className="flex items-center gap-4">
+          <Link to='/calls' className="text-xl cursor-pointer"><Camera /></Link>
+          <Link to='/calls' className="text-xl cursor-pointer mr-2"><RingingPhone /></Link>
+          <h1 className="font-bold text-lg mr-4">WHATSS</h1>
+          <img src={whatss} alt="no image" className="w-12 h-12 rounded-full mr-[-6px]" />
         </div>
       </div>
 
       {/* Main Call Area */}
       <div className="flex flex-col items-center justify-center flex-grow text-center">
         <img
-          src="https://via.placeholder.com/100"
+          src={whatss}
           alt="Profile"
-          className="w-24 h-24 rounded-full border-4 border-gray-700"
+          className="w-24 h-24 rounded-full "
         />
         <h2 className="mt-3 text-lg font-semibold">محمد مصطفى</h2>
         <p className="text-gray-400 mt-2">يرن........</p>
 
         {/* Video Feed */}
-        <div className="mt-6 w-3/4 md:w-1/2 border-2 border-blue-500 rounded-lg overflow-hidden">
+        <div className="mt-1 w-3/4 md:w-1/2 rounded-lg overflow-hidden">
           <img
-            src="https://via.placeholder.com/500x300"
+            src={whatss}
             alt="Video Feed"
             className="w-full"
           />
@@ -32,12 +43,12 @@ export default function VidCallBox() {
       </div>
 
       {/* Call Controls */}
-      <div className="bg-gray-800 p-4 flex justify-center gap-6">
-        <button className="bg-red-600 p-4 rounded-full">📴</button>
-        <button className="bg-gray-700 p-4 rounded-full">⚫</button>
-        <button className="bg-gray-700 p-4 rounded-full">🎥</button>
-        <button className="bg-gray-700 p-4 rounded-full">🔄</button>
-        <button className="bg-gray-700 p-4 rounded-full">👥</button>
+      <div className="bg-[#6B696D] p-4 flex justify-center gap-6">
+        <button className="bg-[#464448] p-3 rounded-full cursor-pointer"><Addfreind /></button>
+        <button className="bg-[#464448] px-4 w-13 rounded-full cursor-pointer"><VideoIcon color={'#ffffffff'}/></button>
+        <button className="bg-[#464448] px-4 rounded-full cursor-pointer"><Mic /></button>
+        <button className="bg-[#464448] px-4 rounded-full cursor-pointer"><VerticalDots /></button>
+        <button className="bg-red-600 w-17 px-5 rounded-full cursor-pointer"><ClosePhone /></button>
       </div>
     </div>
   );

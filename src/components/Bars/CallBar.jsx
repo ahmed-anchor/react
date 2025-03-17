@@ -1,5 +1,4 @@
 import React from "react";
-import Profile from "../svgs/Profile";
 import { Link } from "react-router-dom";
 import PhoneIcon from "../svgs/PhoneIcon";
 import VideoIcon from "../svgs/VideoIcon";

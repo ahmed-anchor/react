@@ -1,72 +1,25 @@
-import { useState } from "react";
-
-const StatusView = ({ status, onClose }) => {
-  return (
-    <div className="fixed inset-0 bg-gray-900 bg-opacity-90 flex flex-col items-center justify-center">
-      {/* Top Section: User Info */}
-      <div className="absolute top-4 left-4 flex items-center space-x-3 text-white">
-        <img
-          src={status.profilePic}
-          alt="User"
-          className="w-10 h-10 rounded-full border-2 border-white"
-        />
-        <div>
-          <h3 className="font-semibold">{status.name}</h3>
-          <p className="text-sm opacity-80">{status.time}</p>
-        </div>
-      </div>
-
-      {/* Status Image */}
-      <div className="max-w-lg w-full p-2">
-        <img
-          src={status.image}
-          alt="Status"
-          className="w-full rounded-lg shadow-lg"
-        />
-      </div>
-
-      {/* Close Button */}
-      <button onClick={onClose} className="absolute top-4 right-4 text-white text-2xl">
-        &times;
-      </button>
-
-      {/* Bottom Input Field */}
-      <div className="absolute bottom-4 w-full max-w-lg px-4">
-        <div className="flex items-center bg-gray-800 p-2 rounded-full">
-          <span className="text-gray-400 p-2">😊</span>
-          <input
-            type="text"
-            placeholder="Type a message"
-            className="flex-1 bg-transparent text-white outline-none px-2"
-          />
-          <button className="text-blue-400 p-2">➤</button>
-        </div>
-      </div>
-    </div>
-  );
-};
+import { Link } from 'react-router-dom';
+import whatssRemovedBg from '../../assets/whatss-removedbg.png'
+import whatss from '../../assets/whatss.jpeg'
+import Camera from "../svgs/Camera";
+import RingingPhone from "../svgs/RingingPhone";
 
 // Example Usage
 const StatusBox = () => {
-  const [showStatus, setShowStatus] = useState(true);
-
-  const statusData = {
-    profilePic: "https://via.placeholder.com/50", // Replace with actual image URL
-    name: "إبراهيم خالد",
-    time: "Today 07:39",
-    image: "https://via.placeholder.com/500", // Replace with actual status image
-  };
-
   return (
-    <div>
-      {showStatus && <StatusView status={statusData} onClose={() => setShowStatus(false)} />}
-      {!showStatus && (
-        <div className="w-full h-screen">
-          <button onClick={() => setShowStatus(true)} className="p-2 bg-blue-500 text-white rounded">
-            Open Status
-          </button>
+    <div className="w-full h-screen bg-[#302e32]">
+      <div className="w-full flex flex-col justify-between h-screen items-center ">
+        <div className="flex justify-between items-center w-full p-4 bg-white text-black shadow-md">
+          <h1 className="font-bold text-lg">المكالمات</h1>
+          <div className="flex items-center gap-4">
+            <Link to='/calls' className="text-xl cursor-pointer"><Camera /></Link>
+            <Link to='/calls' className="text-xl cursor-pointer mr-2"><RingingPhone /></Link>
+            <h1 className="font-bold text-lg mr-4">WHATSS</h1>
+            <img src={whatss} alt="no image" className="w-12 h-12 rounded-full mr-[-6px]" />
+          </div>
         </div>
-      )}
+        <img src={whatssRemovedBg} alt="Floating Image" className="w-100 h-100 mb-40 object-cover animate-float" />
+      </div>
     </div>
   );
 };

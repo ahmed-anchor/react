@@ -1,9 +1,7 @@
 import React from 'react'
 
 export default function VideoIcon({ color }) {
-  console.log(color)
   return (
-    
     <svg
     width="18"
     height="22"

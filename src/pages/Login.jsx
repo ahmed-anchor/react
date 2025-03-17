@@ -1,6 +1,9 @@
-export default function LoginPage() {
+import React from "react";
+import { Link } from "react-router-dom";
+
+export default function Login() {
   return (
-    <div dir="rtl" className="min-h-screen bg-gray-100 flex items-center justify-center">
+    <div dir="rtl" className="min-h-screen w-screen bg-gray-100 flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-96">
         {/* Main Title */}
         <div className="mb-6">
@@ -43,9 +46,11 @@ export default function LoginPage() {
             />
           </div>
 
+        <Link to='/chats'>
           <button className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">
             تسجيل الحقول
           </button>
+        </Link>
         </div>
 
         {/* Social Connections */}

@@ -1,5 +1,4 @@
 import React from "react";
-import Profile from "../svgs/Profile";
 import Delivered from "../svgs/Delivered";
 import UnDelivered from "../svgs/UnDelivered";
 import whatss from '../../assets/whatss.jpeg'

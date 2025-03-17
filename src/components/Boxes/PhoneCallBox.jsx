@@ -7,6 +7,7 @@ import Addfreind from "../svgs/Addfreind";
 import Camera from "../svgs/Camera";
 import RingingPhone from "../svgs/RingingPhone";
 import whatss from '../../assets/whatss.jpeg'
+import { Link } from "react-router-dom";
 
 
 export default function PhoneCallBox() {
@@ -17,8 +18,8 @@ export default function PhoneCallBox() {
       <div className="flex justify-between items-center p-4 bg-white text-black shadow-md">
         <h1 className="font-bold text-lg">المكالمات</h1>
         <div className="flex items-center gap-4">
-          <button className="text-xl cursor-pointer"><Camera /></button>
-          <button className="text-xl cursor-pointer mr-2"><RingingPhone /></button>
+          <Link to='/calls' className="text-xl cursor-pointer"><Camera /></Link>
+          <Link to='/calls' className="text-xl cursor-pointer mr-2"><RingingPhone /></Link>
           <h1 className="font-bold text-lg mr-4">WHATSS</h1>
           <img src={whatss} alt="no image" className="w-12 h-12 rounded-full mr-[-6px]" />
         </div>

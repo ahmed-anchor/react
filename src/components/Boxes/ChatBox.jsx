@@ -2,6 +2,11 @@ import { useState } from "react";
 import whatss from '../../assets/whatss.jpeg'
 import Camera from "../svgs/Camera";
 import RingingPhone from "../svgs/RingingPhone";
+import { Link } from "react-router-dom";
+import SendIcon from "../svgs/SendIcon";
+import PaperClip from "../svgs/PaperClip";
+import MicOff from "../svgs/MicOff";
+import Reaction from "../svgs/Reaction";
 
 const ChatBox = () => {
   const [messages, setMessages] = useState([
@@ -37,8 +42,8 @@ const ChatBox = () => {
       <div className="flex justify-between items-center p-4 bg-white text-black shadow-md">
         <h1 className="font-bold text-lg">المكالمات</h1>
         <div className="flex items-center gap-4">
-          <button className="text-xl cursor-pointer"><Camera /></button>
-          <button className="text-xl cursor-pointer mr-2"><RingingPhone /></button>
+          <Link to='/calls' className="text-xl cursor-pointer"><Camera /></Link>
+          <Link to='/calls' className="text-xl cursor-pointer mr-2"><RingingPhone /></Link>
           <h1 className="font-bold text-lg mr-4">WHATSS</h1>
           <img src={whatss} alt="no image" className="w-12 h-12 rounded-full mr-[-6px]" />
         </div>
@@ -59,17 +64,25 @@ const ChatBox = () => {
       </div>
 
       {/* Input field */}
-      <div className="p-4 bg-white flex justify-between items-center border-t-[0.5px] border-[#ffffff]">
+      <div className="p-4 bg-[#464448] flex justify-between items-center border-t-[0.5px] border-[#ffffff]">
+        <button className="p-2 text-gray-50 cursor-pointer rounded-md">
+          <Reaction />
+        </button>
         <input
           type="text"
-          className="flex-1 p-2 border-gray-300 border rounded-md focus:outline-none"
-          placeholder="Type a message..."
+          className="flex-1 p-2 border-gray-100 bg-gray-100 border rounded-3xl focus:outline-none"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={(e) => e.key === "Enter" && sendMessage()}
         />
-        <button className="ml-2 p-2 mr-5 bg-[#464448] text-white rounded-md" onClick={sendMessage}>
-          Send
+        <button className="ml-2 p-2 text-white cursor-pointer mr-[-44px] rounded-md" onClick={sendMessage}>
+          <SendIcon />
+        </button>
+        <button className="mr-3 text-white cursor-pointer">
+          <PaperClip />
+        </button>
+        <button className="w-7 mr-2 text-white cursor-pointer">
+          <MicOff />
         </button>
       </div>
     </div>

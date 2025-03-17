@@ -7,8 +7,8 @@ export default function Calls() {
   return (
     <div className='w-screen h-screen flex justify-between items-center'>
       <CallBar />
-      <PhoneCallBox />
-      {/* <VidCallBox /> */}
+      {/* <PhoneCallBox /> */}
+      <VidCallBox />
     </div>
   )
 }
