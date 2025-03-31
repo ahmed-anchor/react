@@ -6,6 +6,7 @@ import StatusSVG from './svgs/StatusSVG'
 import PhoneIcon from './svgs/PhoneIcon'
 import { useLocation } from 'react-router-dom'
 import whatss from '../assets/whatss.jpeg'
+import SettingsBar from './settings/SettingsBar'
 
 export default function Sidebar() {
   const location = useLocation();
@@ -31,6 +32,7 @@ export default function Sidebar() {
         الاعدادات
       </button>
     </div>
+    <SettingsBar />
   </div>
   )
 }

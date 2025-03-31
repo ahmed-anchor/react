@@ -7,7 +7,6 @@ import GoingCall from "../svgs/GoingCall";
 import ComingCall from "../svgs/ComingCall";
 import MissedCall from "../svgs/MissedCall";
 
-
 const callHistory = [
   { name: "محمد مصطفى", type: "واردة", status: "incoming", image: whatss },
   { name: "علي سالم", type: "واردة", status: "incoming", image: whatss },
@@ -39,7 +38,7 @@ export default function CallBar() {
       </div>
       <ul>
         {callHistory.map((call, index) => (
-          <li key={index} className="flex items-center justify-between p-2.5 border-b-[.5px] border-gray-300">
+          <li key={index} className="flex items-center justify-between p-2.5 hover:bg-gray-100 border-b-[.5px] border-gray-300">
             <div className="flex items-center gap-3 cursor-pointer">
             <img src={call.image} alt="no image" width="45px" className="rounded-full"/>
               <div className="text-right">

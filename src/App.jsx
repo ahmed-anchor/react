@@ -11,7 +11,7 @@ function Layout() {
 
   return (
     <div className="flex *:w-screen justify-between">
-      {location.pathname !== "/login" ? location.pathname!=='/'?<Sidebar />:"" : ""}
+      {["/chats", "/calls", "/status"].includes(location.pathname) && <Sidebar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />

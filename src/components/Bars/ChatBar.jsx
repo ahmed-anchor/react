@@ -22,7 +22,7 @@ const callHistory = [
   {state: 'delivered', messages: 3,name: "مريم محمود", type: "مهتم", status: "missed", image: whatss },
 ];
 
-export default function ChatBar() {
+export default function ChatBar({changeDefault}) {
   return (
     <div className="w-[400px] max-h-screen scrollbar mx-auto bg-white shadow-lg rounded-lg overflow-scroll">
       <div className="p-4 flex items-center sticky top-0 bg-white ">
@@ -34,7 +34,7 @@ export default function ChatBar() {
       </div>
       <ul>
         {callHistory.map((chat, index) => (
-          <li key={index} className="flex items-center justify-between p-2.5 border-b-[.5px] border-gray-300">
+          <li onClick={()=> changeDefault()} key={index} className="flex items-center justify-between p-2.5 hover:bg-gray-100 border-b-[.5px] border-gray-300">
             <div className="flex items-center gap-3 cursor-pointer">
               <img src={chat.image} alt="no image" width="45px" className="rounded-full"/>
               <div className="text-right">
